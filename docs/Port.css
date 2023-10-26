@@ -121,3 +121,10 @@ transform: translateX(130px);
       transform:translateX(25%)rotateZ(0deg);
     }
   }
+
+  .container-movie{
+    display: flex;
+    }
+    .testmovie{
+    margin-left: 50px;
+    }
