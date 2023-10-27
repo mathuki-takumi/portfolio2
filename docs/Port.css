@@ -48,14 +48,16 @@ height: auto;
     transform: translateX(925px);
     right:0%;
     width: 1200px;
-    height: 3000px;
+    height: 4100px;
     top:0;
     z-index:-1;
+    -ms-filter: blur(2px);
+    filter: blur(3px);
   }
 
   .border-radius {
     position:absolute;
-    opacity:.5;
+    opacity:.2;
     width: 200px;
     height: 200px;
     line-height: 200px;
@@ -70,7 +72,7 @@ height: auto;
   }
   .border-radius_blue {
     position:absolute;
-    opacity:.5;
+    opacity:.2;
     width: 200px;
     top: 200px;
     height: 200px;
@@ -86,7 +88,7 @@ height: auto;
   }
   .border-radius_green {
     position:absolute;
-    opacity:.5;
+    opacity:.2;
     width: 200px;
     top: 160px;
     height: 200px;
@@ -127,4 +129,19 @@ transform: translateX(130px);
     }
     .testmovie{
     margin-left: 50px;
+    }
+
+.HewTitle{
+  top: 20px;
+  width: 30%;
+  height: auto;
+  transform: translateX(230px);
+  margin-bottom:-30px;
+}
+
+    .Hew1{
+      width: 85%;
+      height: auto;
+      transform: translateX(25px);
+   
     }

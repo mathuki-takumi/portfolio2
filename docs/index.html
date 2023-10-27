@@ -39,7 +39,9 @@
         </h1>
         <nav class="gnav">
           <ul class="gnav-list">
-            <li class="gnav-item"><h2>PORT FOLIO</h2></li>
+            <li class="gnav-item"><a href="#Face">自己紹介</a></li>
+            <li class="gnav-item"><a href="#Career">経歴・スキル</a></li>
+            <li class="gnav-item"><a href="#Work">製作作品</a></li>
          
           </ul>
         </nav>
@@ -57,7 +59,7 @@
             <div class="border-radius"></div>
             <div class="border-radius_blue"></div>
            
-            <img class="Face" src="img/AT-13C-342-31松木拓海様3030.png"alt="">
+            <img id="Face" class="Face" src="img/AT-13C-342-31松木拓海様3030.png"alt="">
             <p>
               
               <h2>　　　　名前:松木 拓海</h2>
@@ -67,18 +69,18 @@
             </p>
           </div>
           <br>
-          <div class="Career">
+          <div id="Career" class="Career">
             <p><h2>　　　　経歴</h2></p>
-            <p>　　　　高校卒業後にHAL大阪に入学し、そこからゲームプログラムの学習を始めました。C++やVisualStudioを用いた開発の学習を主と</p>
-            <p>　　　　し、UnityやUnreal Engineでのゲーム開発に関する学習も行っています。</p>
-            <p>　　　　学校ではデザイナーの方とチームを組んでゲーム制作に臨んだため、作成された3Dオブジェクトのゲームへの導入経験があります。</p>
+            <p>　　　　　　　　高校卒業後にHAL大阪に入学し、そこからゲームプログラムの学習を始めました。C++やVisualStudioを用いた開発の</p>
+            <p>　　　　　　　　学習を主とし、UnityやUnreal Engineでのゲーム開発に関する学習も行っています。</p>
+            <p>　　　　　　　　学校ではデザイナーの方とチームを組んでゲーム制作に臨んだため、3Dオブジェクトのゲームへの導入経験があります。</p>
             <br>
             <p><h2>　　　　受賞歴</h2></p>
-            <p>　　　　2022年次HALEVENTWEEK ビジュアル賞受賞</p>
-            <p>　　　　2023年日本ゲーム大賞アマチュア部門 最終審査進出</p>
+            <p>　　　　　　　　2022年次HALEVENTWEEK ビジュアル賞受賞</p>
+            <p>　　　　　　　　2023年日本ゲーム大賞アマチュア部門 最終審査進出</p>
           </div>
           <br>
-          <div class="Skill">
+          <div id="Skill" class="Skill">
             <p><h2>　　　　スキル</h2></p>
             <p>　　　　　　　　・C言語,C++,C#,JavaScript,Maya</p>
             <p>　　　　　　　　・Visual Studio2022,Unity 3.18,UnrealEngine5.0</p>
@@ -86,9 +88,9 @@
             <p>　　　　　　　　・チーム開発経験 2回</p>
           </div>
 <br>
-          <div class="Work">
+          <div id="Work" class="Work">
             <p><h2>　　　　製作作品</h2></p>
-            <p>　　　　　　　　・TARN MARIONET(2年次作品)</p>
+        
           </div>
           <div class="article-body">
         
@@ -96,10 +98,13 @@
               <img class="Cesa1" src="img/cesa.png" alt="">
               <img class="Cesa2" src="img/SESA.png">
             </p>
+            <br>
             <div class="CesaSetumei">
+              <h3>説明</h3>
               <p class="Cesa_1line">日本ゲーム大賞アマチュア部門出場のためにUnityで作成し、最終審査まで残った作品です</p>
               <p>
-                ページをめくるというアクションを生かして捲る途中で止めることでオブジェクトを滑らせて動かし、それを利用して愛馬を作ったり、障害物を消しながら進んでいくパズルアクションゲームです。
+                ページをめくるというアクションを生かして捲る途中で止めることでオブジェクトを滑らせて動かし、それを利用して足場
+                を作ったり、障害物を消しながら進んでいくパズルアクションゲームです。
               </p>
             
             </div>
@@ -120,14 +125,40 @@
               <div class="testmovie">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/9Z0PFrPtNC8?si=ATvkbat4oqE3-HH-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
-  
-
-
-              
-            
             </div>
+
+            <br></br>
+
+            <img class="HewTitle" src="img/076f5ee54228ec00.png" alt="">
+            <p class="Hewfream1">
+              
+              <img class="Hew1" src="img/HEW_.png" alt="">
+            </p>
+       
+            <h3>説明</h3>
+            <div class="HewSetumei">
+              <p class="Hew_1line">HALEventWeekという学内コンテスト出展のために、VisualStudioで開発しました</p>
+              <p>
+                どの弾にどれだけ当たったかでエンディングが変わり、途中で入る選択肢次第で弾の出やすさが変動する、弾を避けつつ弾に当たりにいくシューティングゲームです
+              </p>
+              <div class="Designs">
+              
+                <h3>担当</h3>
+                <p>プログラム</p>
+                <h3>実装箇所</h3>
+                <p>プレイヤーがマスの上に移動する処理</p>
+                <p>マスの上にオブジェクトがあった場合、オブジェクトを移動対象として移動する処理</p>
+                <p>移動対象のオブジェクトと現在いるオブジェクトの高さを比較し、移動できるか判断する処理</p>
+                <p>ページをめくった場合、プレイヤーを持ち上げる処理</p>
+                <p>落下時に足元のオブジェクトを移動対象として格納する処理</p>
+                <p>アニメーションの遷移処理</p>
+               <p>操作キャラクターの各オブジェクトへの接触判定</p>
+               </div>
+            </div>
+<br></br>
+
             <div class="home-link">
-              <p><a href="./#works">Works一覧へ</a>
+              <p><a href="#Work">作品一覧へ</a>
             </div>
         </div>
       </article>
