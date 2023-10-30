@@ -69,6 +69,11 @@ class Fighter extends SpriteActor {
         if(input.getKey('s')) { this._velocityY = this._speed; }
         if(input.getKey('d')) { this._velocityX = this._speed; }
         if(input.getKey('a')) { this._velocityX = -this._speed; }
+
+        if(input.getKey('ArrowUp')) { this._velocityY = -this._speed; }
+        if(input.getKey('ArrowDown')) { this._velocityY = this._speed; }
+        if(input.getKey('ArrowRight')) { this._velocityX = this._speed; }
+        if(input.getKey('ArrowLeft')) { this._velocityX = -this._speed; }
         
         this.x += this._velocityX;
         this.y += this._velocityY;
@@ -372,7 +377,7 @@ class DanmakuStgTitleScene extends Scene {
         super('タイトル', 'black', renderingTarget);
         const title = new TextLabel(120, 200, 'HTMLSTG');
         this.add(title);
-        const Move = new TextLabel(110, 250, '移動:WASD');
+        const Move = new TextLabel(110, 250, '移動:WASD or ←↑↓→');
         this.add(Move);
         const Shot = new TextLabel(110, 300, '射撃:SPACE');
         this.add(Shot);
