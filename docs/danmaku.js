@@ -65,10 +65,10 @@ class Fighter extends SpriteActor {
         this._velocityX = 0;
         this._velocityY = 0;
    
-        if(input.getKey('ArrowUp')) { this._velocityY = -this._speed; }
-        if(input.getKey('ArrowDown')) { this._velocityY = this._speed; }
-        if(input.getKey('ArrowRight')) { this._velocityX = this._speed; }
-        if(input.getKey('ArrowLeft')) { this._velocityX = -this._speed; }
+        if(input.getKey('w')) { this._velocityY = -this._speed; }
+        if(input.getKey('s')) { this._velocityY = this._speed; }
+        if(input.getKey('d')) { this._velocityX = this._speed; }
+        if(input.getKey('a')) { this._velocityX = -this._speed; }
         
         this.x += this._velocityX;
         this.y += this._velocityY;
@@ -191,7 +191,7 @@ class FireworksBullet extends EnemyBullet {
         
         // 爆発時間を超えたら弾を生成して自身を破棄する
         if(this._eplasedTime > this.explosionTime) {
-            this.shootCircularBullets(10, 2);
+            this.shootCircularBullets(5, 2);
             this.destroy();
         }
     }
@@ -203,10 +203,10 @@ class Enemy extends SpriteActor {
         const hitArea = new Rectangle(0, 0, 16, 16);
         super(x, y, sprite, hitArea, ['enemy']);
 
-        this.maxHp = 50;
+        this.maxHp = 40;
         this.currentHp = this.maxHp;
 
-        this._interval = 50;
+        this._interval = 100;
         this._timeCount = 0;
         this._timeCount2 = 0;
         this._velocityX = 0.3;
@@ -236,11 +236,11 @@ class Enemy extends SpriteActor {
         for(let i = 0; i < num; i++) {
             
             this.shootBullet(degree * i, speed);
-            if(this.currentHp<=40)
+            if(this.currentHp<=30)
             {
                 this.shootBullet(degree * i+10, speed-0.5);
             }
-            if(this.currentHp<=30)
+            if(this.currentHp<=20)
             {
                 this.shootBullet(degree * i+20, speed+1);
             }
@@ -260,8 +260,8 @@ class Enemy extends SpriteActor {
             this.shootCircularBullets(15, 1);
             this._timeCount = 0;
         }
-        if(this._timeCount > 35) {
-            if(this.currentHp<=15)
+        if(this._timeCount > 90) {
+            if(this.currentHp<=10)
             {
                 const spdX = Math.random() * 4 - 2; // -2〜+2
                 const spdY = Math.random() * 4 - 2;
