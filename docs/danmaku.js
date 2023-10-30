@@ -261,7 +261,7 @@ class Enemy extends SpriteActor {
             this._timeCount = 0;
         }
         if(this._timeCount > 90) {
-            if(this.currentHp<=10)
+            if(this.currentHp<=20)
             {
                 const spdX = Math.random() * 4 - 2; // -2〜+2
                 const spdY = Math.random() * 4 - 2;
