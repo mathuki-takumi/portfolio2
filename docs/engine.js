@@ -307,7 +307,7 @@ class Game {
         this.screenCanvas = document.createElement('canvas');
         this.screenCanvas.height = height;
         this.screenCanvas.width = width;
-
+        
         this._inputReceiver = new InputReceiver();
         this._prevTimestamp = 0;
 
