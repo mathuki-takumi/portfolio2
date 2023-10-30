@@ -189,9 +189,17 @@ class Enemy extends SpriteActor {
     shootCircularBullets(num, speed) {
         const degree = 360 / num;
         for(let i = 0; i < num; i++) {
+            
             this.shootBullet(degree * i, speed);
-            this.shootBullet(degree * i+10, speed-0.5);
-            this.shootBullet(degree * i+20, speed+1);
+            if(this.currentHp<=40)
+            {
+                this.shootBullet(degree * i+10, speed-0.5);
+            }
+            if(this.currentHp<=30)
+            {
+                this.shootBullet(degree * i+20, speed+1);
+            }
+            
         }
     }
 
@@ -208,11 +216,15 @@ class Enemy extends SpriteActor {
             this._timeCount = 0;
         }
         if(this._timeCount > 35) {
-            const spdX = Math.random() * 4 - 2; // -2〜+2
-            const spdY = Math.random() * 4 - 2;
-            const explosionTime = 50;
-            const bullet = new FireworksBullet(this.x, this.y, spdX, spdY, explosionTime);
-            this.spawnActor(bullet);
+            if(this.currentHp<=15)
+            {
+                const spdX = Math.random() * 4 - 2; // -2〜+2
+                const spdY = Math.random() * 4 - 2;
+                const explosionTime = 50;
+                const bullet = new FireworksBullet(this.x, this.y, spdX, spdY, explosionTime);
+                this.spawnActor(bullet);
+                
+            }
             this._timeCount2 = 0;
         }
 
@@ -332,7 +344,7 @@ class DanmakuStgTitleScene extends Scene {
 
 class DanamkuStgGame extends Game {
     constructor() {
-        super('弾幕STG', 400, 690, 60);
+        super('弾幕STG',  400, 690, 60);
         const titleScene = new DanmakuStgTitleScene(this.screenCanvas);
         this.changeScene(titleScene);
     }

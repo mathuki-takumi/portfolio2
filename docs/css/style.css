@@ -29,7 +29,7 @@ img {
 }
 
 /*--------------------------------
- レイアウ�?
+ レイアウ�?
 ---------------------------------*/
 .wrapper {
   padding-top: 73px;
@@ -50,7 +50,7 @@ img {
 }
 
 /*--------------------------------
- 見�?��?
+ 見�?��?
 ---------------------------------*/
 .title {
   font-size: 34px;
@@ -292,7 +292,7 @@ img {
   margin-top: 10px;
 }
 /*--------------------------------
- ペ�?�ジトッ�?
+ ペ�?�ジトッ�?
 ---------------------------------*/
 .page-top {
   font-weight: bold;
@@ -322,7 +322,7 @@ img {
 }
 
 /*--------------------------------
- 下層?��Worksペ�?�ジ
+ 下層?��Worksペ�?�ジ
 ---------------------------------*/
 .article {
   padding: 80px 0;
@@ -352,11 +352,33 @@ img {
   padding-left: 1em;
 }
 
+.article-body h2 {
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 5px;
+  padding-left: 1em;
+}
+
 .article-body h3:not(:first-child) {
   margin-top: 50px;
 }
 
+.article-body h2:not(:first-child) {
+  margin-top: 50px;
+}
+
 .article-body h3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  content: "";
+  border-radius: 3px;
+  background-color: #333;
+}
+
+.article-body h2::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -392,7 +414,7 @@ img {
     display: block;
   }
 
-  /* 見�?��? */
+  /* 見�?��? */
   .title {
     font-size: 26px;
     margin-bottom: 20px;
@@ -404,7 +426,7 @@ img {
     margin-bottom: 20px;
   }
 
-  /* レイアウ�? */
+  /* レイアウ�? */
   .wrapper {
     padding-top: 57px;
   }
@@ -528,7 +550,7 @@ img {
     padding: 20px;
   }
 
-  /* 下層ペ�?�ジ */
+  /* 下層ペ�?�ジ */
   .article {
     padding: 50px 0;
   }
@@ -538,7 +560,16 @@ img {
     padding-left: .8em;
   }
 
+  .article-body h2 {
+    font-size: 24px;
+    padding-left: .8em;
+  }
+
   .article-body h3:not(:first-child) {
+    margin-top: 30px;
+  }
+
+  .article-body h2:not(:first-child) {
     margin-top: 30px;
   }
 

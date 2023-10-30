@@ -14,11 +14,12 @@
    <!-- Bootstrap CSS -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
+   <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   <link href="css/ress.css" media="all" rel="stylesheet" type="text/css" />
   <link href="css/style.css" media="all" rel="stylesheet" type="text/css" />
   <link rel="shortcut icon" href="img/favicon.ico" />
   <link rel="stylesheet" href="Port.css" />
+  
 
 </head>
 
@@ -33,11 +34,13 @@
 
   <div class="wrapper">
 
+
+    
     <!-- header -->
-    <header class="header ">
+    <header class="header" >
       <div class="container rounded">
         <h1 class="header-logo">
-          <a href=".">Takumi Matsuki</a>
+          <a class="slide-right" style="opacity: 1; transform: translate(0px, 0px);" href=".">Takumi Matsuki</a>
         </h1>
         <nav class="gnav">
           <ul class="gnav-list">
@@ -61,7 +64,7 @@
             <div class="border-radius"></div>
             <div class="border-radius_blue"></div>
            
-            <img id="Face" class="Face" src="img/AT-13C-342-31松木拓海様3030.png"alt="">
+            <img id="Face" class="Face" src="img/AT-13C-342-31松木拓海様3030.jpg"alt="">
             <p>
               
               <h2>　　　　名前:松木 拓海</h2>
@@ -69,7 +72,7 @@
         
           </div>
           <br>
-          <div id="Career" class="Career">
+          <div id="Career" class="Career  slide-right show">
             <p><h2>　　　　経歴</h2></p>
             <p >　　　　　　　　高校卒業後にHAL大阪に入学し、そこからゲームプログラムの学習を始めました。C++やVisualStudioを用いた開発の</p>
             <p>　　　　　　　　学習を主とし、UnityやUnreal Engineでのゲーム開発に関する学習も行っています。</p>
@@ -87,7 +90,7 @@
             <p>　　　　　　　　2023年日本ゲーム大賞アマチュア部門 最終審査進出</p>
           </div>
           <br>
-          <div id="Skill" class="Skill">
+          <div id="Skill" class="Skill slide-right show">
             <p><h2>　　　　スキル</h2></p>
             <p>　　　　　　　　・C言語,C++,C#,JavaScript,Maya</p>
             <p>　　　　　　　　・Visual Studio2022,Unity 3.18,UnrealEngine5.0</p>
@@ -95,18 +98,18 @@
             <p>　　　　　　　　・チーム開発経験 2回</p>
           </div>
 <br>
-          <div id="Work" class="Work">
+          <div id="Work" class="Work slide-right show">
             <p><h2>　　　　製作作品</h2></p>
         
           </div>
           <div class="article-body">
         
-            <p class="FirstCesa">
+            <p class="FirstCesa slide-right show">
               <img class="Cesa1" src="img/cesa.png" alt="">
               <img class="Cesa2" src="img/SESA.png">
             </p>
             <br>
-            <div class="CesaSetumei">
+            <div class="CesaSetumei slide-right show">
               <h3>説明</h3>
               <p class="Cesa_1line">日本ゲーム大賞アマチュア部門出場のためにUnityで作成し、最終審査まで残った作品です</p>
               <p>
@@ -115,7 +118,7 @@
               </p>
             
             </div>
-            <div class="Designs">
+            <div class="Designs slide-right show">
               
               <h3>担当</h3>
               <p>プログラム</p>
@@ -138,8 +141,8 @@
 
             <br></br>
 
-            <img class="HewTitle" src="img/076f5ee54228ec00.png" alt="">
-            <p class="Hewfream1">
+            <img class="HewTitle slide-right show" src="img/076f5ee54228ec00.png" alt="">
+            <p class="Hewfream1 slide-right show">
               
               <img class="Hew1" src="img/HEW_.png" alt="">
             </p>
@@ -183,7 +186,7 @@
             </div>
             <br></br>
             <div>
-              <h2>HTML制作の<a href="Untitled-1.html">シューティングゲーム</a></h2>
+              <h2>HTML制作の<a href="Untitled-1.html">シューティングゲーム</a>リンク</h2>
          
             </div>
 <br></br>
@@ -206,7 +209,23 @@
     <!-- /footer -->
 
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script type='text/javascript' src="js/script.js"></script>
+ 
+  <script>
+   $(function(){
+   $(window).on('load scroll', function() {
+      var winScroll = $(window).scrollTop();
+      var winHeight = $(window).height();
+      var scrollPos = winScroll + (winHeight * 0.8);
+
+      $(".show").each(function() {
+         if($(this).offset().top < scrollPos) {
+            $(this).css({opacity: 1, transform: 'translate(0, 0)'});
+         }
+      });
+   });
+});
+  </script>
 </body>
 </html>

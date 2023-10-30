@@ -10,7 +10,7 @@
 }
 
 .header{
-    background-color: rgb(207, 255, 255);
+    background-color: rgb(255, 255, 255);
 }
 
 .Cesa2{
@@ -62,10 +62,10 @@ height: auto;
     height: 200px;
     line-height: 200px;
     background-color: rgb(255, 0, 0);
-    border-radius: 50%;
+    border-radius: 80%;
     color: #fff;
     z-index:-1;
-    transform: translateY(500px);
+    transform: translateY(520px);
     transform: translateX(60px);
     -ms-filter: blur(2px);
   filter: blur(3px);
@@ -203,4 +203,31 @@ transform: translateX(130px);
     }
     
  
+  /* フェードイン用のCSS */
+  .slide-top {
+    opacity: 0;
+    transform: translate(0, -20px);
+    transition: all 1s ease-out;
+   }
   
+  /* 下からフェードイン */
+  .slide-bottom {
+    opacity: 0;
+    transform: translate(0, 20px);
+    transition: all 1s ease-out;
+   }
+  
+   /* 左からフェードイン */
+  .slide-left {
+    opacity: 0;
+    transform: translate(-20px, 0);
+    transition: all 1s ease-out;
+   }
+  
+  /* 右からフェードイン */
+  .slide-right {
+    opacity: 0;
+    transform: translate(20px, 0);
+    transition: all 1s ease-out;
+   }
+   
