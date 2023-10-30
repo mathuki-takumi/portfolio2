@@ -49,6 +49,8 @@ class Fighter extends SpriteActor {
         this._speed = 3;
         this._velocityX = 0;
         this._velocityY = 0;
+        this.maxEnegy=30;
+        this.currentEnegy=this.maxEnegy;
         
         // 敵の弾に当たったらdestroyする
         this.addEventListener('hit', (e) => {
@@ -62,7 +64,7 @@ class Fighter extends SpriteActor {
         // キーを押されたら移動する
         this._velocityX = 0;
         this._velocityY = 0;
-
+   
         if(input.getKey('ArrowUp')) { this._velocityY = -this._speed; }
         if(input.getKey('ArrowDown')) { this._velocityY = this._speed; }
         if(input.getKey('ArrowRight')) { this._velocityX = this._speed; }
@@ -84,11 +86,53 @@ class Fighter extends SpriteActor {
         // スペースキーで弾を打つ
         this._timeCount++;
         const isFireReady = this._timeCount > this._interval+(this.y/100);
-        if(isFireReady && input.getKey(' ')) {
-            const bullet = new Bullet(this.x, this.y);
-            this.spawnActor(bullet);
-            this._timeCount = 0;
+        if(input.getKey(' '))
+        {
+            if(isFireReady && this.currentEnegy>=1) {
+                const bullet = new Bullet(this.x, this.y);
+                this.spawnActor(bullet);
+                this.currentEnegy-=1;
+                this._timeCount = 0;
+                this.dispatchEvent('changeEn', new GameEvent(this));
+            }
         }
+        else
+        {
+            if(this.currentEnegy<30)
+            {
+                this.currentEnegy+=0.1;
+                this.dispatchEvent('changeEn', new GameEvent(this));
+            }
+           
+        }
+    }
+}
+
+class FighterEnegyBar extends Actor {
+    constructor(x, y, fighter) {
+        const hitArea = new Rectangle(0, 0, 0, 0);
+        super(x, y, hitArea);
+
+        this._width = 200;
+        this._height = 10;
+        
+        this._innerWidth = this._width;
+
+        // 敵のHPが変わったら内側の長さを変更する
+        fighter.addEventListener('changeEn', (e) => {
+            const maxEn = e.target.maxEnegy;
+            const En = e.target.currentEnegy;
+            this._innerWidth = this._width * (En / maxEn);
+        });
+    }
+
+    render(target) {
+        const context = target.getContext('2d');
+        context.strokeStyle = 'white';
+        context.fillStyle = 'blue';
+        
+        context.strokeRect(this.x, this.y, this._width, this._height);
+        context.fillRect(this.x, this.y, this._innerWidth, this._height);
     }
 }
 
@@ -111,6 +155,7 @@ class EnemyBullet extends SpriteActor {
         }
     }
 }
+
 
 class FireworksBullet extends EnemyBullet {
     constructor(x, y, velocityX, velocityY, explosionTime) {
@@ -299,9 +344,11 @@ class DanmakuStgMainScene extends Scene {
         const fighter = new Fighter(150, 300);
         const enemy = new Enemy(150, 100);
         const hpBar = new EnemyHpBar(50, 20, enemy);
+        const EnBar=new FighterEnegyBar(fighter.x,600,fighter);
         this.add(fighter);
         this.add(enemy);
         this.add(hpBar);
+        this.add(EnBar);
 
         
        
